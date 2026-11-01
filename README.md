@@ -2,7 +2,8 @@
 
 Marketing, support and privacy pages for PhotoBloom on iPhone, iPad and Android.
 Live at https://grishaster80.github.io/photobloom/ via GitHub Pages, `main`, repository root.
-Plain static HTML/CSS/JavaScript, no build step.
+Plain static HTML/CSS/JavaScript, no build step. Asset references include a content-hash
+query string; update it on all three pages when changing an asset to avoid stale browser caches.
 
 ## Downloads
 
