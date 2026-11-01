@@ -57,6 +57,29 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 10px 26px rgba(43,34,48,0.32);
 }
 .badge.soft { background: rgba(255,255,255,0.55); color: var(--ink); box-shadow: none; }
+
+/* ---------- Store / CTA buttons ---------- */
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 11px;
+  padding: 12px 22px; border-radius: 14px; text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn .ico { display: inline-flex; }
+.btn .lbl { display: flex; flex-direction: column; line-height: 1.08; text-align: left; font-weight: 800; font-size: 1.18rem; }
+.btn .lbl small { font-size: .72rem; font-weight: 600; letter-spacing: .015em; opacity: .85; }
+.btn-ios { background: var(--ink); color: #fff; box-shadow: 0 10px 26px rgba(43,34,48,0.32); }
+.btn-ios:hover { box-shadow: 0 14px 32px rgba(43,34,48,0.40); }
+.btn-android { background: #fff; color: var(--ink); box-shadow: 0 10px 26px rgba(240,73,47,0.20); }
+.btn-android:hover { box-shadow: 0 14px 32px rgba(240,73,47,0.30); }
+
+/* ---------- Download band ---------- */
+.download-band { background: linear-gradient(135deg, var(--peach), #ffc4ac); border-radius: var(--radius); padding: 48px 36px; text-align: center; }
+.download-band .em { font-size: 2.6rem; margin-bottom: 6px; }
+.download-band h2 { margin: 0 0 8px; }
+.download-band p { color: #5b3a32; max-width: 540px; margin: 0 auto 24px; font-size: 1.08rem; }
+.download-band .btn { margin: 0 auto; }
 .hero-shots {
   display: flex; justify-content: center; align-items: flex-start;
   gap: clamp(14px, 2vw, 32px);
@@ -123,4 +146,31 @@ footer .copy { color: var(--ink-soft); font-size: 0.9rem; }
   .nav nav a { margin-left: 14px; }
   footer .wrap { flex-direction: column; text-align: center; }
   footer .links a { margin: 0 10px; }
+}
+
+/* Downloads and analytics choices */
+section[id], h3[id] { scroll-margin-top: 90px; }
+.download-band p.install-note { margin: 22px auto 0; font-size: .9rem; max-width: 620px; }
+.link-button { border: 0; padding: 0; background: none; color: var(--coral-deep); font: inherit; text-decoration: underline; cursor: pointer; }
+footer .link-button { color: var(--ink-soft); font-weight: 600; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--coral-deep); outline-offset: 5px; }
+.analytics-choice { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 30; max-width: 740px; margin: auto; padding: 20px 24px; background: var(--card); color: var(--ink); border: 1px solid var(--peach); border-radius: 18px; box-shadow: 0 8px 40px #2b223030; }
+.analytics-choice[hidden] { display: none; }
+.analytics-choice p { margin: 0 0 14px; font-size: .92rem; }
+.analytics-choice .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+.analytics-choice .allow { background: var(--ink); color: white; border: 0; padding: 10px 16px; border-radius: 10px; font: inherit; font-weight: 600; cursor: pointer; }
+@media (max-width: 500px) {
+  .nav .wrap { height: auto; min-height: 62px; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 12px; padding-bottom: 12px; }
+  .nav nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 16px; }
+  .nav nav a { margin: 0; font-size: .85rem; }
+  .hero-shots img { width: min(100%, 340px); }
+  .hero-shots img:nth-child(2) { margin-top: 0; }
+  .feature-row img { max-width: 100%; }
+  .doc { padding: 28px 22px; }
+  .contact-box { padding: 18px; }
+  .contact-box a { font-size: 1rem; overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
 }

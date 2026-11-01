@@ -6,6 +6,8 @@
   <title>PhotoBloom — Support</title>
   <meta name="description" content="Support and frequently asked questions for PhotoBloom, the photo memory game." />
   <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/analytics-config.js" defer></script>
+  <script src="assets/analytics.js" defer></script>
 </head>
 <body>
   <header class="nav">
@@ -32,7 +34,7 @@
         </div>
       </div>
 
-      <p>When reporting a problem, it helps a lot if you include your <strong>iPhone model</strong>, your <strong>iOS version</strong>, and the <strong>PhotoBloom version</strong> (you'll find it in the App Store listing). We typically reply within a couple of days.</p>
+      <p>When reporting a problem, it helps a lot if you include your <strong>device model</strong>, your <strong>iOS or Android version</strong>, and the <strong>PhotoBloom version</strong>. We typically reply within a couple of days.</p>
 
       <h2>Frequently asked questions</h2>
 
@@ -62,8 +64,16 @@
       <h3>What is the Daily Challenge?</h3>
       <p>One special challenge per day. It's the same <em>kind</em> of challenge for everyone on a given day, but it's always generated from <em>your</em> library — so no two players ever see the same questions.</p>
 
+      <h3 id="android-install">How do I install the Android APK?</h3>
+      <ol>
+        <li><a href="https://github.com/grishaster80/photobloom/releases/latest/download/photobloom.apk" data-download="android_apk" data-placement="support">Download the signed PhotoBloom APK</a> on your Android phone.</li>
+        <li>Open the downloaded file. If Android asks, allow this browser to install apps, then tap Install.</li>
+        <li>Open PhotoBloom and grant photo access to start playing.</li>
+      </ol>
+      <p>Android 10 or later is required. You can turn off your browser's install permission again after installation. For updates, download and install the latest APK from the same link. This beta is distributed directly; installing it does not join a Google Play test. A future Play Store build may use a different signing certificate and require reinstalling.</p>
+
       <h3>Which devices are supported?</h3>
-      <p>PhotoBloom requires <strong>iOS 18 or later</strong>. It's built around the latest on-device intelligence for picking your best photos, which isn't available on older versions.</p>
+      <p>PhotoBloom requires <strong>iOS 18 or later</strong>. It's built around the latest on-device intelligence for picking your best photos, which isn't available on older versions. The Android beta requires <strong>Android 10 or later</strong> and is available from the <a href="index.html#download">download section</a>.</p>
 
       <h3>How do I delete my data?</h3>
       <p>PhotoBloom stores its game data (streaks, scores, cached city names) on your device. Deleting the app removes all of it. To opt out of anonymous analytics entirely, deleting the app stops all collection.</p>
@@ -77,6 +87,7 @@
     <div class="wrap">
       <div class="copy">© 2026 Grigoriy Shimichev. All rights reserved.</div>
       <div class="links">
+        <button type="button" class="link-button" data-analytics-preferences>Analytics preferences</button>
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>
         <a href="mailto:gshimichev@gmail.com">Contact</a>
