@@ -69,7 +69,8 @@ node --test tests/analytics.test.cjs
 ```
 
 Local previews never send analytics by default. Add `?analytics_test=1`, then allow analytics,
-for explicit browser QA against PostHog; these events use `environment=test`. Check that
+for explicit browser QA against PostHog; these events use `environment=test`. In QA mode the HTML root’s `data-analytics-state`
+shows `loading`, `ready`, or `unavailable` to verify SDK startup without exposing credentials. Check that
 page and link events are accepted and that decline/withdrawal stops requests. Download links
 must keep working even if PostHog is blocked or the SDK fails to load.
 

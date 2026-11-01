@@ -13,6 +13,7 @@ function page({ hostname = 'grishaster80.github.io', consent, dnt, gpc, storageB
   const banner = { hidden: true, setAttribute() {}, querySelector: key => controls.get(key) };
   const window = { PHOTO_BLOOM_ANALYTICS: { token: 'phc_test', host: 'https://eu.i.posthog.com' }, addEventListener: (name, fn) => storageHandlers[name] = fn };
   const document = {
+    documentElement: { dataset: {} },
     referrer: 'https://example.com/private/path?email=secret',
     createElement: tag => tag === 'aside' ? banner : {},
     head: { append: s => scripts.push(s) }, body: { append() {} },

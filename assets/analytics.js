@@ -49,6 +49,7 @@
     }
     if (!started) {
       started = true;
+      if (testing) document.documentElement.dataset.analyticsState = 'loading';
       // Small SDK queue: events wait here while the official async bundle loads.
       const queue = window.posthog = [];
       queue.__SV = 1;
@@ -74,6 +75,7 @@
         save_campaign_params: false,
         save_referrer: false,
         loaded(client) {
+          if (testing) document.documentElement.dataset.analyticsState = allowed() ? 'ready' : 'disabled';
           if (allowed()) client.opt_in_capturing({ captureEventName: false });
           else { pageviewSent = false; client.reset(); client.opt_out_capturing(); }
         },
@@ -95,6 +97,9 @@
       queue.capture = (...args) => queue.push(['capture', ...args]);
       const script = document.createElement('script');
       script.async = true;
+      script.onerror = () => {
+        if (testing) document.documentElement.dataset.analyticsState = 'unavailable';
+      };
       script.crossOrigin = 'anonymous';
       script.src = config.host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
       document.head.append(script);
